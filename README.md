@@ -60,26 +60,26 @@ This script preprocesses the  dataset and generates the following files:
 - word_dict.pickle
   
 ### **2. Exploratory Data Analysis & Dataset Splitting**
-Run  EDA_DATASETSPLIT.ipynb  to:
+Run  **EDA_DATASETSPLIT.ipynb**  to:
 - Analyze dataset characteristics
 - Split processed data into training, validation, and test sets
 
-### **3. Running Models **
+### **3. Running Models**
 Choose one of the models from the models/ directory and run it with:
 - python models/exp1.py  # 3-gram model  
 - python models/exp2.py  # ProtBERT with truncation  
 - python models/exp3.py  # ProtBERT with chunking
 inputs:
-- Training set: train_set_ex3.pt
-- Validation set: dev_set_ex3.pt
-- Test set: test_set_ex3.pt
-- Dictionary files: fingerprint_dict.pickle, word_dict.pickle
+- **Training set: train_set_ex3.pt**
+- **Validation set: dev_set_ex3.pt**
+- **Test set: test_set_ex3.pt**
+- **Dictionary files: fingerprint_dict.pickle, word_dict.pickle**
 
 
 ---
 
 ## Additional Scripts
-1. analyse_dataset_length.py &#8594; Visualize the protein sequence length distribution.
-2. flowchart_reconstruction.py &#8594; Generates a flowchart explaining the reconstruction of 3-gram indices into full amino acid sequences.
-3.visual_results.py &#8594; Plots training metrics (loss, AUC, etc.) from model training.
+1. **analyse_dataset_length.py** &#8594; Visualize the protein sequence length distribution.
+2. **flowchart_reconstruction.py** &#8594; Generates a flowchart explaining the reconstruction of 3-gram indices into full amino acid sequences.
+3. **visual_results.py** &#8594; Plots training metrics (loss, AUC, etc.) from model training.
 

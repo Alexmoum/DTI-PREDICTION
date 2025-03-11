@@ -42,26 +42,44 @@ We use a **subset of the DUD-E dataset** (`dataset/cleaned_dataset.txt`). This d
 ## **Dependencies**  
 
 All required Python libraries are listed in `prerequisites.txt`. Install them using:  
-
-```bash
 pip install -r prerequisites.txt
 
+---
 
-## Flow
-To recreate the experiments these steps have to be followed:
-1. Run preprocess_data.py with input the cleaned_dataset.txt this script preprocesses the initial dataset and outputs 7 files
-   proteins.pkl
-   compounds.pkl
-   adjacencies.pkl
-   interactions.pkl
-   SMILES.txt
-   fingerpint_dict.pickle
-   word_dict.pickle
-2. Then run the jupyter script EDA_DATASETSPLIT.ipynb which outputs some characteristics of our dataset and also creates the preprocessed datasets by combining  ( compounds.pkl,adjacencies.pkl,proteins.pkl, interactions.pkl) and splitting this into Training,Validation and Test set.
-3. Now we can run any model from our models directory were exp1.py is the basis 3-gram model , exp2.py is prot_bert with truncation and exp3.py is our model with prot_bert+chunking. InputS are the datasets created from step 2 so train_set.ex3.pt, dev_set_ex3.pt, test_set_ex3.pt alongside with fingerpint_dict.pickle and word_dict_pickle created at step 1.
+## **Experimental Workflow**
+To reproduce the experiments, follow these steps: 
+### **1. Preprocessing the Data**
+Run the following script: preprocess_data.py dataset/cleaned_dataset.txt 
+This script preprocesses the  dataset and generates the following files:
+- proteins.pkl
+- compounds.pkl
+- adjacencies.pkl
+- interactions.pkl
+- SMILES.txt
+- fingerpint_dict.pickle
+- word_dict.pickle
+  
+### **2. Exploratory Data Analysis & Dataset Splitting**
+Run  EDA_DATASETSPLIT.ipynb  to:
+- Analyze dataset characteristics
+- Split processed data into training, validation, and test sets
 
-## Other scripts
-1.Running script analyse_dataset_length.py we can visualize the proteins length distribution across the datasets
-2.Running script flowchart_reconstruction.py we can create a flowchart that explains the reconstruction algorithm that takes 3-gram indices and turn them back to the full amino acid sequence
-3.Running visual_results.py we can visualize the training metrics that are being logged when we train our models.
+### **3. Running Models **
+Choose one of the models from the models/ directory and run it with:
+- python models/exp1.py  # 3-gram model  
+- python models/exp2.py  # ProtBERT with truncation  
+- python models/exp3.py  # ProtBERT with chunking
+inputs:
+- Training set: train_set_ex3.pt
+- Validation set: dev_set_ex3.pt
+- Test set: test_set_ex3.pt
+- Dictionary files: fingerprint_dict.pickle, word_dict.pickle
+
+
+---
+
+## Additional Scripts
+1. analyse_dataset_length.py &#8594; Visualize the protein sequence length distribution.
+2. flowchart_reconstruction.py &#8594; Generates a flowchart explaining the reconstruction of 3-gram indices into full amino acid sequences.
+3.visual_results.py &#8594; Plots training metrics (loss, AUC, etc.) from model training.
 

@@ -49,15 +49,15 @@ pip install -r prerequisites.txt
 ## **Experimental Workflow**
 To reproduce the experiments, follow these steps: 
 ### **1. Preprocessing the Data**
-Run the following script: preprocess_data.py dataset/cleaned_dataset.txt 
+Run the following script: `preprocess_data.py dataset/cleaned_dataset.txt`
 This script preprocesses the  dataset and generates the following files:
-- proteins.pkl
-- compounds.pkl
-- adjacencies.pkl
-- interactions.pkl
-- SMILES.txt
-- fingerpint_dict.pickle
-- word_dict.pickle
+- `proteins.pkl`
+- `compounds.pkl`
+- `adjacencies.pkl`
+- `interactions.pkl`
+- `SMILES.txt`
+- `fingerpint_dict.pickle`
+- `word_dict.pickle`
   
 ### **2. Exploratory Data Analysis & Dataset Splitting**
 Run  **EDA_DATASETSPLIT.ipynb**  to:
@@ -66,10 +66,11 @@ Run  **EDA_DATASETSPLIT.ipynb**  to:
 
 ### **3. Running Models**
 Choose one of the models from the models/ directory and run it with:
-- python models/exp1.py  # 3-gram model  
-- python models/exp2.py  # ProtBERT with truncation  
-- python models/exp3.py  # ProtBERT with chunking
-inputs:
+- `python models/exp1.py  # 3-gram model`  
+- `python models/exp2.py  # ProtBERT with truncation`  
+- `python models/exp3.py  # ProtBERT with chunking`
+  
+Inputs:
 - **Training set: train_set_ex3.pt**
 - **Validation set: dev_set_ex3.pt**
 - **Test set: test_set_ex3.pt**
